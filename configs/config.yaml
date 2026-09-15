@@ -1,0 +1,58 @@
+# Master Configuration for SIH 26006
+project:
+  name: "AI-Driven Indian East Coast Freight Forecasting & Vessel Charter Recommendation System"
+  id: "SIH 26006"
+  domain: "Maritime Logistics & Bulk Procurement"
+  version: "1.0.0"
+  random_seed: 42
+  timezone: "UTC"
+
+data:
+  raw_local_dir: "data/raw/local"
+  raw_kaggle_dir: "data/raw/kaggle"
+  raw_govt_dir: "data/raw/government"
+  interim_dir: "data/interim"
+  processed_dir: "data/processed"
+  splits_dir: "data/splits"
+  metadata_dir: "data/metadata"
+  synthetic_dir: "data/synthetic/development_only"
+  freight_unit: "USD_PER_TON"
+  currency: "USD"
+
+splits:
+  method: "chronological"
+  train_ratio: 0.70
+  validation_ratio: 0.15
+  test_ratio: 0.15
+  min_train_samples: 100
+
+ranking:
+  weight_cost: 0.50
+  weight_speed: 0.30
+  weight_reliability: 0.20
+  top_n: 5
+  min_top_n: 3
+  max_top_n: 5
+
+decision:
+  savings_threshold_charter_pct: 2.0
+  on_time_threshold_charter: 0.70
+  congestion_risk_threshold_avoid: 0.80
+  on_time_threshold_avoid: 0.40
+
+ports:
+  canonical_east_coast:
+    - PARADIP
+    - VISAKHAPATNAM
+    - DHAMRA
+    - GANGAVARAM
+    - KAMARAJAR
+    - CHENNAI
+    - HALDIA
+    - KOLKATA
+    - GOPALPUR
+
+api:
+  host: "0.0.0.0"
+  port: 8000
+  reload: false

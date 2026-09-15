@@ -1,0 +1,69 @@
+{
+  "project": "SIH 26006: AI-Driven Indian East Coast Freight Forecasting & Vessel Charter Recommendation System",
+  "generated_at": "2026-09-03T00:00:00Z",
+  "scope_classification": {
+    "INDIA_REAL": [
+      {
+        "dataset_name": "Indian Major Port Operational Data",
+        "source": "Global Daily Port Activity and Trade Estimates (IMF / PortWatch / UNCTAD)",
+        "local_path": "Global Daily Port Activity and Trade Estimates/Daily_Port_Activity_Data_and_Trade_Estimates.csv",
+        "geographic_coverage": "Indian East Coast Ports (Paradip, Visakhapatnam, Dhamra, Kamarajar, Chennai, Haldia, Kolkata)",
+        "date_coverage": "2019-01-01 to 2026-06-30",
+        "total_indian_records": 48250,
+        "features_derived": ["daily_dry_bulk_calls", "total_portcalls", "import_cargo_mt", "export_cargo_mt", "derived_congestion_index", "est_waiting_days"]
+      },
+      {
+        "dataset_name": "Indian Port Association (IPA) Traffic Reports",
+        "source": "Ministry of Ports, Shipping and Waterways / IPA",
+        "local_path": "cargo traffic data/",
+        "geographic_coverage": "Paradip, Visakhapatnam, Chennai, Kamarajar, Haldia, Kolkata",
+        "date_coverage": "Annual / Monthly historical reporting",
+        "features_derived": ["historical_throughput_mt", "cargo_mix_breakdown"]
+      },
+      {
+        "dataset_name": "Indian East Coast Port Physical Constraints Registry",
+        "source": "Official Port Authority Gazettes & Tariffs",
+        "local_path": "data/processed/ports/port_constraints.parquet",
+        "geographic_coverage": "Paradip, Visakhapatnam, Dhamra, Gangavaram, Kamarajar, Chennai, Haldia, Kolkata, Gopalpur",
+        "features_derived": ["max_draft_m", "max_loa_m", "max_beam_m", "allowed_vessel_classes", "tide_dependency"]
+      }
+    ],
+    "GLOBAL_SUPPORTING": [
+      {
+        "dataset_name": "World Bank Commodity Market Outlook (CMO)",
+        "source": "World Bank Group Development Prospects Group",
+        "local_path": "WORLD BANK COMMODITY DATA/CMO-Historical-Data-Monthly.xlsx",
+        "geographic_coverage": "Global Benchmark Markets",
+        "date_coverage": "1960 to 2026",
+        "features_derived": ["australian_coal_usd", "south_african_coal_usd", "crude_brent_usd", "iron_ore_usd"]
+      },
+      {
+        "dataset_name": "Processed AIS Ship Tracking Dataset",
+        "source": "NOAA / Global AIS Trajectories",
+        "local_path": "AIS ship tracking dynamic and port conjection/processed_AIS_dataset.csv",
+        "geographic_coverage": "Global Supporting Data (Algorithm validation & vessel speed-consumption dynamics)",
+        "features_derived": ["speed_distribution", "draft_distribution", "eta_pressure_dynamics"]
+      },
+      {
+        "dataset_name": "Global Supply Chain Disruption & Resilience",
+        "source": "Maritime Research Benchmark",
+        "local_path": "Global Supply Chain Disruption & Resilience/global_supply_chain_disruption_v1.csv",
+        "features_derived": ["lead_time_variation", "disruption_risk_index"]
+      }
+    ],
+    "SYNTHETIC_DEVELOPMENT_ONLY": [
+      {
+        "dataset_name": "Development Route-Level Freight Training Master",
+        "local_path": "data/synthetic/development_only/synthetic_training_master.parquet",
+        "purpose": "Algorithm benchmarking, quantile regression validation, conformal uncertainty calibration, and API testing",
+        "synthetic_flag": true,
+        "limitation_statement": "Commercial dry bulk fixture freight rates (USD/tonne) between overseas load ports (e.g., Hay Point, Newcastle, Tanjung Bara, Maputo) and Indian East Coast discharge ports are proprietary subscription data (Baltic Exchange / Platts / Clarksons SIN). This dataset is strictly restricted to development and offline pipeline verification."
+      }
+    ]
+  },
+  "data_freshness": {
+    "port_congestion_index": "CURRENT_PROCESSED",
+    "port_constraints": "VERIFIED_CANONICAL",
+    "fleet_registry": "VERIFIED_CANONICAL"
+  }
+}

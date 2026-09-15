@@ -1,0 +1,62 @@
+[
+  {
+    "feature": "rolling_mean_7",
+    "importance": 0.1987
+  },
+  {
+    "feature": "lag_1",
+    "importance": 0.1845
+  },
+  {
+    "feature": "freight_lag_1d",
+    "importance": 0.177
+  },
+  {
+    "feature": "freight_rolling_mean_7d",
+    "importance": 0.0662
+  },
+  {
+    "feature": "freight_lag_3d",
+    "importance": 0.0349
+  },
+  {
+    "feature": "rolling_mean_30",
+    "importance": 0.0267
+  },
+  {
+    "feature": "month_cos",
+    "importance": 0.0139
+  },
+  {
+    "feature": "week_of_year",
+    "importance": 0.01
+  },
+  {
+    "feature": "rolling_mean_90",
+    "importance": 0.0099
+  },
+  {
+    "feature": "is_peak_procurement",
+    "importance": 0.0086
+  },
+  {
+    "feature": "freight_lag_7d",
+    "importance": 0.0085
+  },
+  {
+    "feature": "freight_rolling_mean_90d",
+    "importance": 0.0083
+  },
+  {
+    "feature": "est_waiting_days",
+    "importance": 0.0078
+  },
+  {
+    "feature": "month",
+    "importance": 0.0078
+  },
+  {
+    "feature": "day_of_year",
+    "importance": 0.0075
+  }
+]

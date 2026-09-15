@@ -1,0 +1,80 @@
+{
+  "generated_at": "2026-09-05T11:24:23.324480+00:00",
+  "total_datasets_evaluated": 3,
+  "dataset_summaries": {
+    "port_master": {
+      "row_count": 19,
+      "column_count": 14,
+      "missing_cells_total": 0,
+      "missing_percentage": 0.0,
+      "duplicate_rows": 0,
+      "column_null_percentages": {
+        "port_code": 0.0,
+        "port_name": 0.0,
+        "canonical_name": 0.0,
+        "country": 0.0,
+        "coast": 0.0,
+        "state": 0.0,
+        "latitude": 0.0,
+        "longitude": 0.0,
+        "max_draft_m": 0.0,
+        "max_loa_m": 0.0,
+        "max_beam_m": 0.0,
+        "max_dwt_tonnes": 0.0,
+        "allowed_vessel_classes": 0.0,
+        "avg_turnaround_days": 0.0
+      },
+      "anomalies_detected": [],
+      "quality_status": "PASSED"
+    },
+    "vessel_master": {
+      "row_count": 40,
+      "column_count": 17,
+      "missing_cells_total": 0,
+      "missing_percentage": 0.0,
+      "duplicate_rows": 0,
+      "column_null_percentages": {
+        "vessel_id": 0.0,
+        "vessel_name": 0.0,
+        "imo": 0.0,
+        "mmsi": 0.0,
+        "vessel_class": 0.0,
+        "dwt": 0.0,
+        "loa_m": 0.0,
+        "beam_m": 0.0,
+        "draft_m": 0.0,
+        "design_speed_knots": 0.0,
+        "fuel_consumption_sea_t_day": 0.0,
+        "fuel_consumption_port_t_day": 0.0,
+        "vessel_age_years": 0.0,
+        "status": 0.0,
+        "current_location": 0.0,
+        "eta_days_to_load_port": 0.0,
+        "daily_hire_rate_usd": 0.0
+      },
+      "anomalies_detected": [],
+      "quality_status": "PASSED"
+    },
+    "port_congestion_daily": {
+      "row_count": 12762,
+      "column_count": 10,
+      "missing_cells_total": 0,
+      "missing_percentage": 0.0,
+      "duplicate_rows": 0,
+      "column_null_percentages": {
+        "date": 0.0,
+        "canonical_port": 0.0,
+        "portcalls_dry_bulk": 0.0,
+        "portcalls_total": 0.0,
+        "import_cargo_mt": 0.0,
+        "export_cargo_mt": 0.0,
+        "dry_bulk_calls_7d_avg": 0.0,
+        "dry_bulk_calls_30d_avg": 0.0,
+        "derived_congestion_index": 0.0,
+        "est_waiting_days": 0.0
+      },
+      "anomalies_detected": [],
+      "quality_status": "PASSED"
+    }
+  }
+}

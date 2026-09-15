@@ -1,0 +1,10 @@
+{
+  "explainer_type": "TreeExplainer_SHAP",
+  "target": "freight_usd_per_ton",
+  "quantiles_explained": [
+    0.1,
+    0.5,
+    0.9
+  ],
+  "top_feature": "rolling_mean_7"
+}

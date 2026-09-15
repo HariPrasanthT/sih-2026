@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SHAP Feature Explainability Report - SAIL SIH 26006</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #0f172a; color: #f8fafc; margin: 0; padding: 30px; }
+        .container { max-width: 1100px; margin: 0 auto; background: #1e293b; border-radius: 12px; padding: 30px; box-shadow: 0 10px 25px rgba(0,0,0,0.5); }
+        h1 { color: #38bdf8; margin-top: 0; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 13px; }
+        th, td { padding: 12px 14px; text-align: left; border-bottom: 1px solid #334155; }
+        th { background: #0f172a; color: #94a3b8; text-transform: uppercase; font-size: 11px; }
+        tr:hover { background: #24344d; }
+        code { background: #0f172a; padding: 3px 6px; border-radius: 4px; color: #e2e8f0; }
+        .desc-box { background: #0f172a; border-left: 4px solid #38bdf8; padding: 15px 20px; border-radius: 0 8px 8px 0; margin-bottom: 25px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔍 SHAP Global Feature Importance Report</h1>
+        <div class="desc-box">
+            <strong>Explainable AI for Bulk Freight Forecasting:</strong>
+            TreeSHAP Shapley values computed across the held-out test split (2026).
+            Reveals macro commodity indexes (BDI, Bunker VLSFO), physical port draft constraints, and strictly shifted time-series momentum as top price drivers.
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 50px;">Rank</th>
+                    <th>Feature Attribute</th>
+                    <th style="width: 150px;">Domain Category</th>
+                    <th style="width: 100px;">Mean |SHAP|</th>
+                    <th style="width: 250px;">Relative Influence</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+        <tr>
+            <td><strong>#1</strong></td>
+            <td><code>rolling_mean_7</code></td>
+            <td><span style="background: #a855f7; color: white; padding: 3px 8px; border-radius: 4px; font-size: 11px;">Time-Series Dynamics</span></td>
+            <td>0.1987</td>
+            <td>
+                <div style="background: #334155; border-radius: 4px; overflow: hidden; height: 14px; width: 100%;">
+                    <div style="background: linear-gradient(90deg, #38bdf8, #818cf8); height: 100%; width: 100.0%;"></div>
+                </div>
+            </td>
+        </tr>
+        
+        <tr>
+            <td><strong>#2</strong></td>
+            <td><code>lag_1</code></td>
+            <td><span style="background: #a855f7; color: white; padding: 3px 8px; border-radius: 4px; font-size: 11px;">Time-Series Dynamics</span></td>
+            <td>0.1845</td>
+            <td>
+                <div style="background: #334155; border-radius: 4px; overflow: hidden; height: 14px; width: 100%;">
+                    <div style="background: linear-gradient(90deg, #38bdf8, #818cf8); height: 100%; width: 92.9%;"></div>
+                </div>
+            </td>
+        </tr>
+        
+        <tr>
+            <td><strong>#3</strong></td>
+            <td><code>freight_lag_1d</code></td>
+            <td><span style="background: #a855f7; color: white; padding: 3px 8px; border-radius: 4px; font-size: 11px;">Time-Series Dynamics</span></td>
+            <td>0.1770</td>
+            <td>
+                <div style="background: #334155; border-radius: 4px; overflow: hidden; height: 14px; width: 100%;">
+                    <div style="background: linear-gradient(90deg, #38bdf8, #818cf8); height: 100%; width: 89.1%;"></div>
+                </div>
+            </td>
+        </tr>
+        
+        <tr>
+            <td><strong>#4</strong></td>
+            <td><code>freight_rolling_mean_7d</code></td>
+            <td><span style="background: #a855f7; color: white; padding: 3px 8px; border-radius: 4px; font-size: 11px;">Time-Series Dynamics</span></td>
+            <td>0.0662</td>
+            <td>
+                <div style="background: #334155; border-radius: 4px; overflow: hidden; height: 14px; width: 100%;">
+                    <div style="background: linear-gradient(90deg, #38bdf8, #818cf8); height: 100%; width: 33.3%;"></div>
+                </div>
+            </td>
+        </tr>
+        
+        <tr>
+            <td><strong>#5</strong></td>
+            <td><code>freight_lag_3d</code></td>
+            <td><span style="background: #a855f7; color: white; padding: 3px 8px; border-radius: 4px; font-size: 11px;">Time-Series Dynamics</span></td>
+            <td>0.0349</td>
+            <td>
+                <div style="background: #334155; border-radius: 4px; overflow: hidden; height: 14px; width: 100%;">
+                    <div style="background: linear-gradient(90deg, #38bdf8, #818cf8); height: 100%; width: 17.6%;"></div>
+                </div>
+            </td>
+        </tr>
+        
+        <tr>
+            <td><strong>#6</strong></td>
+            <td><code>rolling_mean_30</code></td>
+            <td><span style="background: #a855f7; color: white; padding: 3px 8px; border-radius: 4px; font-size: 11px;">Time-Series Dynamics</span></td>
+            <td>0.0267</td>
+            <td>
+                <div style="background: #334155; border-radius: 4px; overflow: hidden; height: 14px; width: 100%;">
+                    <div style="background: linear-gradient(90deg, #38bdf8, #818cf8); height: 100%; width: 13.4%;"></div>
+                </div>
+            </td>
+        </tr>
+        
+        <tr>
+            <td><strong>#7</strong></td>
+            <td><code>month_cos</code></td>
+            <td><span style="background: #64748b; color: white; padding: 3px 8px; border-radius: 4px; font-size: 11px;">Vessel / Route</span></td>
+            <td>0.0139</td>
+            <td>
+                <div style="background: #334155; border-radius: 4px; overflow: hidden; height: 14px; width: 100%;">
+                    <div style="background: linear-gradient(90deg, #38bdf8, #818cf8); height: 100%; width: 7.0%;"></div>
+                </div>
+            </td>
+        </tr>
+        
+        <tr>
+            <td><strong>#8</strong></td>
+            <td><code>week_of_year</code></td>
+            <td><span style="background: #64748b; color: white; padding: 3px 8px; border-radius: 4px; font-size: 11px;">Vessel / Route</span></td>
+            <td>0.0100</td>
+            <td>
+                <div style="background: #334155; border-radius: 4px; overflow: hidden; height: 14px; width: 100%;">
+                    <div style="background: linear-gradient(90deg, #38bdf8, #818cf8); height: 100%; width: 5.0%;"></div>
+                </div>
+            </td>
+        </tr>
+        
+        <tr>
+            <td><strong>#9</strong></td>
+            <td><code>rolling_mean_90</code></td>
+            <td><span style="background: #a855f7; color: white; padding: 3px 8px; border-radius: 4px; font-size: 11px;">Time-Series Dynamics</span></td>
+            <td>0.0099</td>
+            <td>
+                <div style="background: #334155; border-radius: 4px; overflow: hidden; height: 14px; width: 100%;">
+                    <div style="background: linear-gradient(90deg, #38bdf8, #818cf8); height: 100%; width: 5.0%;"></div>
+                </div>
+            </td>
+        </tr>
+        
+        <tr>
+            <td><strong>#10</strong></td>
+            <td><code>is_peak_procurement</code></td>
+            <td><span style="background: #64748b; color: white; padding: 3px 8px; border-radius: 4px; font-size: 11px;">Vessel / Route</span></td>
+            <td>0.0086</td>
+            <td>
+                <div style="background: #334155; border-radius: 4px; overflow: hidden; height: 14px; width: 100%;">
+                    <div style="background: linear-gradient(90deg, #38bdf8, #818cf8); height: 100%; width: 4.3%;"></div>
+                </div>
+            </td>
+        </tr>
+        
+        <tr>
+            <td><strong>#11</strong></td>
+            <td><code>freight_lag_7d</code></td>
+            <td><span style="background: #a855f7; color: white; padding: 3px 8px; border-radius: 4px; font-size: 11px;">Time-Series Dynamics</span></td>
+            <td>0.0085</td>
+            <td>
+                <div style="background: #334155; border-radius: 4px; overflow: hidden; height: 14px; width: 100%;">
+                    <div style="background: linear-gradient(90deg, #38bdf8, #818cf8); height: 100%; width: 4.3%;"></div>
+                </div>
+            </td>
+        </tr>
+        
+        <tr>
+            <td><strong>#12</strong></td>
+            <td><code>freight_rolling_mean_90d</code></td>
+            <td><span style="background: #a855f7; color: white; padding: 3px 8px; border-radius: 4px; font-size: 11px;">Time-Series Dynamics</span></td>
+            <td>0.0083</td>
+            <td>
+                <div style="background: #334155; border-radius: 4px; overflow: hidden; height: 14px; width: 100%;">
+                    <div style="background: linear-gradient(90deg, #38bdf8, #818cf8); height: 100%; width: 4.2%;"></div>
+                </div>
+            </td>
+        </tr>
+        
+        <tr>
+            <td><strong>#13</strong></td>
+            <td><code>est_waiting_days</code></td>
+            <td><span style="background: #10b981; color: white; padding: 3px 8px; border-radius: 4px; font-size: 11px;">Port Operations</span></td>
+            <td>0.0078</td>
+            <td>
+                <div style="background: #334155; border-radius: 4px; overflow: hidden; height: 14px; width: 100%;">
+                    <div style="background: linear-gradient(90deg, #38bdf8, #818cf8); height: 100%; width: 3.9%;"></div>
+                </div>
+            </td>
+        </tr>
+        
+        <tr>
+            <td><strong>#14</strong></td>
+            <td><code>month</code></td>
+            <td><span style="background: #64748b; color: white; padding: 3px 8px; border-radius: 4px; font-size: 11px;">Vessel / Route</span></td>
+            <td>0.0078</td>
+            <td>
+                <div style="background: #334155; border-radius: 4px; overflow: hidden; height: 14px; width: 100%;">
+                    <div style="background: linear-gradient(90deg, #38bdf8, #818cf8); height: 100%; width: 3.9%;"></div>
+                </div>
+            </td>
+        </tr>
+        
+        <tr>
+            <td><strong>#15</strong></td>
+            <td><code>day_of_year</code></td>
+            <td><span style="background: #64748b; color: white; padding: 3px 8px; border-radius: 4px; font-size: 11px;">Vessel / Route</span></td>
+            <td>0.0075</td>
+            <td>
+                <div style="background: #334155; border-radius: 4px; overflow: hidden; height: 14px; width: 100%;">
+                    <div style="background: linear-gradient(90deg, #38bdf8, #818cf8); height: 100%; width: 3.8%;"></div>
+                </div>
+            </td>
+        </tr>
+        
+        <tr>
+            <td><strong>#16</strong></td>
+            <td><code>freight_rolling_mean_30d</code></td>
+            <td><span style="background: #a855f7; color: white; padding: 3px 8px; border-radius: 4px; font-size: 11px;">Time-Series Dynamics</span></td>
+            <td>0.0071</td>
+            <td>
+                <div style="background: #334155; border-radius: 4px; overflow: hidden; height: 14px; width: 100%;">
+                    <div style="background: linear-gradient(90deg, #38bdf8, #818cf8); height: 100%; width: 3.6%;"></div>
+                </div>
+            </td>
+        </tr>
+        
+        <tr>
+            <td><strong>#17</strong></td>
+            <td><code>bdi_pct_change_14d</code></td>
+            <td><span style="background: #3b82f6; color: white; padding: 3px 8px; border-radius: 4px; font-size: 11px;">Macro / Fuel</span></td>
+            <td>0.0070</td>
+            <td>
+                <div style="background: #334155; border-radius: 4px; overflow: hidden; height: 14px; width: 100%;">
+                    <div style="background: linear-gradient(90deg, #38bdf8, #818cf8); height: 100%; width: 3.5%;"></div>
+                </div>
+            </td>
+        </tr>
+        
+        <tr>
+            <td><strong>#18</strong></td>
+            <td><code>lag_3</code></td>
+            <td><span style="background: #a855f7; color: white; padding: 3px 8px; border-radius: 4px; font-size: 11px;">Time-Series Dynamics</span></td>
+            <td>0.0067</td>
+            <td>
+                <div style="background: #334155; border-radius: 4px; overflow: hidden; height: 14px; width: 100%;">
+                    <div style="background: linear-gradient(90deg, #38bdf8, #818cf8); height: 100%; width: 3.4%;"></div>
+                </div>
+            </td>
+        </tr>
+        
+        <tr>
+            <td><strong>#19</strong></td>
+            <td><code>loa_utilization</code></td>
+            <td><span style="background: #10b981; color: white; padding: 3px 8px; border-radius: 4px; font-size: 11px;">Port Operations</span></td>
+            <td>0.0064</td>
+            <td>
+                <div style="background: #334155; border-radius: 4px; overflow: hidden; height: 14px; width: 100%;">
+                    <div style="background: linear-gradient(90deg, #38bdf8, #818cf8); height: 100%; width: 3.2%;"></div>
+                </div>
+            </td>
+        </tr>
+        
+        <tr>
+            <td><strong>#20</strong></td>
+            <td><code>freight_lag_14d</code></td>
+            <td><span style="background: #a855f7; color: white; padding: 3px 8px; border-radius: 4px; font-size: 11px;">Time-Series Dynamics</span></td>
+            <td>0.0061</td>
+            <td>
+                <div style="background: #334155; border-radius: 4px; overflow: hidden; height: 14px; width: 100%;">
+                    <div style="background: linear-gradient(90deg, #38bdf8, #818cf8); height: 100%; width: 3.1%;"></div>
+                </div>
+            </td>
+        </tr>
+        
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

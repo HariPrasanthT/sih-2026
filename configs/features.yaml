@@ -1,0 +1,77 @@
+# Feature Engineering Configuration
+freight_features:
+  lags: [1, 3, 7, 14, 30]
+  rolling_windows: [7, 30, 90]
+  rolling_stats: ["mean", "std"]
+  momentum_windows: [7, 30]
+
+market_features:
+  commodities:
+    - coal_australian
+    - coal_indonesian
+    - coal_south_african
+    - brent_crude
+    - iron_ore
+  indices:
+    - bdi
+    - bci
+    - bpi
+    - bsi
+    - bhsi
+  fx:
+    - usd_inr
+
+bunker_features:
+  fuels:
+    - vlsfo_singapore
+    - mgo_singapore
+  rolling_windows: [7, 30]
+
+port_features:
+  traffic_metrics:
+    - cargo_handled_mt
+    - pre_berthing_detention_hrs
+    - turnaround_time_hrs
+    - berth_occupancy_pct
+  derived_congestion:
+    weight_anchorage: 0.35
+    weight_waiting: 0.30
+    weight_berth: 0.20
+    weight_turnaround: 0.15
+
+ais_features:
+  radius_nm: 25.0
+  metrics:
+    - vessels_approaching_count
+    - vessels_anchorage_count
+    - vessels_berth_count
+    - avg_sog_knots
+    - vessel_density_index
+    - eta_pressure_index
+
+vessel_features:
+  numerical:
+    - dwt
+    - loa
+    - beam
+    - draft
+    - design_speed
+    - fuel_consumption_sea
+    - fuel_consumption_port
+    - vessel_age
+  efficiency_metric: "fuel_per_dwt_mile"
+
+temporal_features:
+  calendar:
+    - month
+    - quarter
+    - day_of_week
+    - week_of_year
+  cyclical:
+    - month_sin
+    - month_cos
+    - day_of_week_sin
+    - day_of_week_cos
+  domain:
+    - is_monsoon # June to September
+    - is_peak_procurement # Q3-Q4

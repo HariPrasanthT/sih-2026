@@ -1,0 +1,11 @@
+{
+  "model_name": "QuantileEnsembleFreightModel",
+  "description": "Validation-loss optimized combination of XGBoost and LightGBM quantile regressors",
+  "quantiles": [
+    0.1,
+    0.5,
+    0.9
+  ],
+  "primary_metric": "pinball_loss",
+  "artifact_file": "ensemble_freight.joblib"
+}

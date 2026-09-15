@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Missing Values Audit Report - SAIL SIH 26006</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #0f172a; color: #f8fafc; margin: 0; padding: 30px; }
+        .container { max-width: 1100px; margin: 0 auto; background: #1e293b; border-radius: 12px; padding: 30px; box-shadow: 0 10px 25px rgba(0,0,0,0.5); }
+        h1 { color: #38bdf8; margin-top: 0; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { padding: 12px 16px; text-align: left; border-bottom: 1px solid #334155; }
+        th { background: #0f172a; color: #94a3b8; text-transform: uppercase; font-size: 12px; letter-spacing: 0.05em; }
+        tr:hover { background: #24344d; }
+        .badge { padding: 4px 10px; border-radius: 6px; font-size: 11px; font-weight: bold; text-transform: uppercase; }
+        .badge-success { background: #059669; color: #ecfdf5; }
+        .badge-warning { background: #d97706; color: #fffbeb; }
+        .badge-danger { background: #dc2626; color: #fef2f2; }
+        code { background: #0f172a; padding: 2px 6px; border-radius: 4px; color: #e2e8f0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔍 Missing Values Audit Report</h1>
+        <p style="color: #94a3b8;">SAIL SIH 26006: Maritime Freight Forecasting Dataset Quality Assurance</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Dataset</th>
+                    <th>Feature Name</th>
+                    <th>Data Type</th>
+                    <th>Missing Count</th>
+                    <th>Missing Pct</th>
+                    <th>Quality Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+        <tr>
+            <td><code>training_master</code></td>
+            <td><strong>forecast_date</strong></td>
+            <td><code>datetime64[ns]</code></td>
+            <td>0</td>
+            <td>0.0%</td>
+            <td><span class="badge badge-success">CLEAN</span></td>
+        </tr>
+        
+        <tr>
+            <td><code>training_master</code></td>
+            <td><strong>origin_port</strong></td>
+            <td><code>object</code></td>
+            <td>0</td>
+            <td>0.0%</td>
+            <td><span class="badge badge-success">CLEAN</span></td>
+        </tr>
+        
+        <tr>
+            <td><code>training_master</code></td>
+            <td><strong>destination_port</strong></td>
+            <td><code>object</code></td>
+            <td>0</td>
+            <td>0.0%</td>
+            <td><span class="badge badge-success">CLEAN</span></td>
+        </tr>
+        
+        <tr>
+            <td><code>training_master</code></td>
+            <td><strong>cargo_type</strong></td>
+            <td><code>object</code></td>
+            <td>0</td>
+            <td>0.0%</td>
+            <td><span class="badge badge-success">CLEAN</span></td>
+        </tr>
+        
+        <tr>
+            <td><code>training_master</code></td>
+            <td><strong>vessel_class</strong></td>
+            <td><code>object</code></td>
+            <td>0</td>
+            <td>0.0%</td>
+            <td><span class="badge badge-success">CLEAN</span></td>
+        </tr>
+        
+        <tr>
+            <td><code>training_master</code></td>
+            <td><strong>route_distance_nm</strong></td>
+            <td><code>float64</code></td>
+            <td>0</td>
+            <td>0.0%</td>
+            <td><span class="badge badge-success">CLEAN</span></td>
+        </tr>
+        
+        <tr>
+            <td><code>training_master</code></td>
+            <td><strong>bdi_index</strong></td>
+            <td><code>float64</code></td>
+            <td>0</td>
+            <td>0.0%</td>
+            <td><span class="badge badge-success">CLEAN</span></td>
+        </tr>
+        
+        <tr>
+            <td><code>training_master</code></td>
+            <td><strong>bunker_vlsfo_usd_ton</strong></td>
+            <td><code>float64</code></td>
+            <td>0</td>
+            <td>0.0%</td>
+            <td><span class="badge badge-success">CLEAN</span></td>
+        </tr>
+        
+        <tr>
+            <td><code>training_master</code></td>
+            <td><strong>usd_inr_rate</strong></td>
+            <td><code>float64</code></td>
+            <td>0</td>
+            <td>0.0%</td>
+            <td><span class="badge badge-success">CLEAN</span></td>
+        </tr>
+        
+        <tr>
+            <td><code>training_master</code></td>
+            <td><strong>coal_benchmark_usd_ton</strong></td>
+            <td><code>float64</code></td>
+            <td>0</td>
+            <td>0.0%</td>
+            <td><span class="badge badge-success">CLEAN</span></td>
+        </tr>
+        
+        <tr>
+            <td><code>training_master</code></td>
+            <td><strong>wave_height_m</strong></td>
+            <td><code>float64</code></td>
+            <td>0</td>
+            <td>0.0%</td>
+            <td><span class="badge badge-success">CLEAN</span></td>
+        </tr>
+        
+        <tr>
+            <td><code>training_master</code></td>
+            <td><strong>wind_speed_knots</strong></td>
+            <td><code>float64</code></td>
+            <td>0</td>
+            <td>0.0%</td>
+            <td><span class="badge badge-success">CLEAN</span></td>
+        </tr>
+        
+        <tr>
+            <td><code>training_master</code></td>
+            <td><strong>cyclone_alert_flag</strong></td>
+            <td><code>int64</code></td>
+            <td>0</td>
+            <td>0.0%</td>
+            <td><span class="badge badge-success">CLEAN</span></td>
+        </tr>
+        
+        <tr>
+            <td><code>training_master</code></td>
+            <td><strong>volatility_index</strong></td>
+            <td><code>float64</code></td>
+            <td>0</td>
+            <td>0.0%</td>
+            <td><span class="badge badge-success">CLEAN</span></td>
+        </tr>
+        
+        <tr>
+            <td><code>training_master</code></td>
+            <td><strong>demand_index</strong></td>
+            <td><code>float64</code></td>
+            <td>0</td>
+            <td>0.0%</td>
+            <td><span class="badge badge-success">CLEAN</span></td>
+        </tr>
+        
+        <tr>
+            <td><code>training_master</code></td>
+            <td><strong>derived_congestion_index</strong></td>
+            <td><code>float64</code></td>
+            <td>0</td>
+            <td>0.0%</td>
+            <td><span class="badge badge-success">CLEAN</span></td>
+        </tr>
+        
+        <tr>
+            <td><code>training_master</code></td>
+            <td><strong>est_waiting_days</strong></td>
+            <td><code>float64</code></td>
+            <td>0</td>
+            <td>0.0%</td>
+            <td><span class="badge badge-success">CLEAN</span></td>
+        </tr>
+        
+        <tr>
+            <td><code>training_master</code></td>
+            <td><strong>vessels_approaching_count</strong></td>
+            <td><code>int64</code></td>
+            <td>0</td>
+            <td>0.0%</td>
+            <td><span class="badge badge-success">CLEAN</span></td>
+        </tr>
+        
+        <tr>
+            <td><code>training_master</code></td>
+            <td><strong>vessels_anchorage_count</strong></td>
+            <td><code>int64</code></td>
+            <td>0</td>
+            <td>0.0%</td>
+            <td><span class="badge badge-success">CLEAN</span></td>
+        </tr>
+        
+        <tr>
+            <td><code>training_master</code></td>
+            <td><strong>freight_usd_per_ton</strong></td>
+            <td><code>float64</code></td>
+            <td>0</td>
+            <td>0.0%</td>
+            <td><span class="badge badge-success">CLEAN</span></td>
+        </tr>
+        
+        <tr>
+            <td><code>training_master</code></td>
+            <td><strong>transit_days</strong></td>
+            <td><code>float64</code></td>
+            <td>0</td>
+            <td>0.0%</td>
+            <td><span class="badge badge-success">CLEAN</span></td>
+        </tr>
+        
+        <tr>
+            <td><code>training_master</code></td>
+            <td><strong>on_time_flag</strong></td>
+            <td><code>int64</code></td>
+            <td>0</td>
+            <td>0.0%</td>
+            <td><span class="badge badge-success">CLEAN</span></td>
+        </tr>
+        
+        <tr>
+            <td><code>training_master</code></td>
+            <td><strong>freight_lag_1d</strong></td>
+            <td><code>float64</code></td>
+            <td>10</td>
+            <td>0.04%</td>
+            <td><span class="badge badge-warning">WARNING</span></td>
+        </tr>
+        
+        <tr>
+            <td><code>training_master</code></td>
+            <td><strong>lag_1</strong></td>
+            <td><code>float64</code></td>
+            <td>10</td>
+            <td>0.04%</td>
+            <td><span class="badge badge-warning">WARNING</span></td>
+        </tr>
+        
+        <tr>
+            <td><code>training_master</code></td>
+            <td><strong>freight_lag_3d</strong></td>
+            <td><code>float64</code></td>
+            <td>30</td>
+            <td>0.12%</td>
+            <td><span class="badge badge-warning">WARNING</span></td>
+        </tr>
+        
+        <tr>
+            <td><code>training_master</code></td>
+            <td><strong>lag_3</strong></td>
+            <td><code>float64</code></td>
+            <td>30</td>
+            <td>0.12%</td>
+            <td><span class="badge badge-warning">WARNING</span></td>
+        </tr>
+        
+        <tr>
+            <td><code>training_master</code></td>
+            <td><strong>freight_lag_7d</strong></td>
+            <td><code>float64</code></td>
+            <td>70</td>
+            <td>0.27%</td>
+            <td><span class="badge badge-warning">WARNING</span></td>
+        </tr>
+        
+        <tr>
+            <td><code>training_master</code></td>
+            <td><strong>lag_7</strong></td>
+            <td><code>float64</code></td>
+            <td>70</td>
+            <td>0.27%</td>
+            <td><span class="badge badge-warning">WARNING</span></td>
+        </tr>
+        
+        <tr>
+            <td><code>training_master</code></td>
+            <td><strong>freight_lag_14d</strong></td>
+            <td><code>float64</code></td>
+            <td>140</td>
+            <td>0.55%</td>
+            <td><span class="badge badge-warning">WARNING</span></td>
+        </tr>
+        
+        <tr>
+            <td><code>training_master</code></td>
+            <td><strong>lag_14</strong></td>
+            <td><code>float64</code></td>
+            <td>140</td>
+            <td>0.55%</td>
+            <td><span class="badge badge-warning">WARNING</span></td>
+        </tr>
+        
+        <tr>
+            <td><code>training_master</code></td>
+            <td><strong>freight_lag_30d</strong></td>
+            <td><code>float64</code></td>
+            <td>300</td>
+            <td>1.17%</td>
+            <td><span class="badge badge-warning">WARNING</span></td>
+        </tr>
+        
+        <tr>
+            <td><code>training_master</code></td>
+            <td><strong>lag_30</strong></td>
+            <td><code>float64</code></td>
+            <td>300</td>
+            <td>1.17%</td>
+            <td><span class="badge badge-warning">WARNING</span></td>
+        </tr>
+        
+        <tr>
+            <td><code>training_master</code></td>
+            <td><strong>freight_rolling_mean_7d</strong></td>
+            <td><code>float64</code></td>
+            <td>10</td>
+            <td>0.04%</td>
+            <td><span class="badge badge-warning">WARNING</span></td>
+        </tr>
+        
+        <tr>
+            <td><code>training_master</code></td>
+            <td><strong>freight_rolling_std_7d</strong></td>
+            <td><code>float64</code></td>
+            <td>0</td>
+            <td>0.0%</td>
+            <td><span class="badge badge-success">CLEAN</span></td>
+        </tr>
+        
+        <tr>
+            <td><code>training_master</code></td>
+            <td><strong>rolling_mean_7</strong></td>
+            <td><code>float64</code></td>
+            <td>10</td>
+            <td>0.04%</td>
+            <td><span class="badge badge-warning">WARNING</span></td>
+        </tr>
+        
+        <tr>
+            <td><code>training_master</code></td>
+            <td><strong>rolling_std_7</strong></td>
+            <td><code>float64</code></td>
+            <td>0</td>
+            <td>0.0%</td>
+            <td><span class="badge badge-success">CLEAN</span></td>
+        </tr>
+        
+        <tr>
+            <td><code>training_master</code></td>
+            <td><strong>freight_rolling_mean_30d</strong></td>
+            <td><code>float64</code></td>
+            <td>10</td>
+            <td>0.04%</td>
+            <td><span class="badge badge-warning">WARNING</span></td>
+        </tr>
+        
+        <tr>
+            <td><code>training_master</code></td>
+            <td><strong>freight_rolling_std_30d</strong></td>
+            <td><code>float64</code></td>
+            <td>0</td>
+            <td>0.0%</td>
+            <td><span class="badge badge-success">CLEAN</span></td>
+        </tr>
+        
+        <tr>
+            <td><code>training_master</code></td>
+            <td><strong>rolling_mean_30</strong></td>
+            <td><code>float64</code></td>
+            <td>10</td>
+            <td>0.04%</td>
+            <td><span class="badge badge-warning">WARNING</span></td>
+        </tr>
+        
+        <tr>
+            <td><code>training_master</code></td>
+            <td><strong>rolling_std_30</strong></td>
+            <td><code>float64</code></td>
+            <td>0</td>
+            <td>0.0%</td>
+            <td><span class="badge badge-success">CLEAN</span></td>
+        </tr>
+        
+        <tr>
+            <td><code>training_master</code></td>
+            <td><strong>freight_rolling_mean_90d</strong></td>
+            <td><code>float64</code></td>
+            <td>10</td>
+            <td>0.04%</td>
+            <td><span class="badge badge-warning">WARNING</span></td>
+        </tr>
+        
+        <tr>
+            <td><code>training_master</code></td>
+            <td><strong>freight_rolling_std_90d</strong></td>
+            <td><code>float64</code></td>
+            <td>0</td>
+            <td>0.0%</td>
+            <td><span class="badge badge-success">CLEAN</span></td>
+        </tr>
+        
+        <tr>
+            <td><code>training_master</code></td>
+            <td><strong>rolling_mean_90</strong></td>
+            <td><code>float64</code></td>
+            <td>10</td>
+            <td>0.04%</td>
+            <td><span class="badge badge-warning">WARNING</span></td>
+        </tr>
+        
+        <tr>
+            <td><code>training_master</code></td>
+            <td><strong>rolling_std_90</strong></td>
+            <td><code>float64</code></td>
+            <td>0</td>
+            <td>0.0%</td>
+            <td><span class="badge badge-success">CLEAN</span></td>
+        </tr>
+        
+        <tr>
+            <td><code>training_master</code></td>
+            <td><strong>freight_momentum_7d</strong></td>
+            <td><code>float64</code></td>
+            <td>70</td>
+            <td>0.27%</td>
+            <td><span class="badge badge-warning">WARNING</span></td>
+        </tr>
+        
+        <tr>
+            <td><code>training_master</code></td>
+            <td><strong>freight_pct_change_7d</strong></td>
+            <td><code>float64</code></td>
+            <td>0</td>
+            <td>0.0%</td>
+            <td><span class="badge badge-success">CLEAN</span></td>
+        </tr>
+        
+        <tr>
+            <td><code>training_master</code></td>
+            <td><strong>freight_volatility_30d</strong></td>
+            <td><code>float64</code></td>
+            <td>0</td>
+            <td>0.0%</td>
+            <td><span class="badge badge-success">CLEAN</span></td>
+        </tr>
+        
+        <tr>
+            <td><code>training_master</code></td>
+            <td><strong>bunker_rolling_mean_7d</strong></td>
+            <td><code>float64</code></td>
+            <td>0</td>
+            <td>0.0%</td>
+            <td><span class="badge badge-success">CLEAN</span></td>
+        </tr>
+        
+        <tr>
+            <td><code>training_master</code></td>
+            <td><strong>bunker_rolling_mean_30d</strong></td>
+            <td><code>float64</code></td>
+            <td>0</td>
+            <td>0.0%</td>
+            <td><span class="badge badge-success">CLEAN</span></td>
+        </tr>
+        
+        <tr>
+            <td><code>training_master</code></td>
+            <td><strong>bunker_volatility_30d</strong></td>
+            <td><code>float64</code></td>
+            <td>0</td>
+            <td>0.0%</td>
+            <td><span class="badge badge-success">CLEAN</span></td>
+        </tr>
+        
+        <tr>
+            <td><code>training_master</code></td>
+            <td><strong>bdi_rolling_mean_7d</strong></td>
+            <td><code>float64</code></td>
+            <td>0</td>
+            <td>0.0%</td>
+            <td><span class="badge badge-success">CLEAN</span></td>
+        </tr>
+        
+        <tr>
+            <td><code>training_master</code></td>
+            <td><strong>bdi_rolling_mean_30d</strong></td>
+            <td><code>float64</code></td>
+            <td>0</td>
+            <td>0.0%</td>
+            <td><span class="badge badge-success">CLEAN</span></td>
+        </tr>
+        
+        <tr>
+            <td><code>training_master</code></td>
+            <td><strong>bdi_momentum_14d</strong></td>
+            <td><code>float64</code></td>
+            <td>14</td>
+            <td>0.05%</td>
+            <td><span class="badge badge-warning">WARNING</span></td>
+        </tr>
+        
+        <tr>
+            <td><code>training_master</code></td>
+            <td><strong>bdi_pct_change_14d</strong></td>
+            <td><code>float64</code></td>
+            <td>0</td>
+            <td>0.0%</td>
+            <td><span class="badge badge-success">CLEAN</span></td>
+        </tr>
+        
+        <tr>
+            <td><code>training_master</code></td>
+            <td><strong>fx_rolling_mean_30d</strong></td>
+            <td><code>float64</code></td>
+            <td>0</td>
+            <td>0.0%</td>
+            <td><span class="badge badge-success">CLEAN</span></td>
+        </tr>
+        
+        <tr>
+            <td><code>training_master</code></td>
+            <td><strong>congestion_severity_level</strong></td>
+            <td><code>object</code></td>
+            <td>0</td>
+            <td>0.0%</td>
+            <td><span class="badge badge-success">CLEAN</span></td>
+        </tr>
+        
+        <tr>
+            <td><code>training_master</code></td>
+            <td><strong>waiting_pressure_ratio</strong></td>
+            <td><code>float64</code></td>
+            <td>0</td>
+            <td>0.0%</td>
+            <td><span class="badge badge-success">CLEAN</span></td>
+        </tr>
+        
+        <tr>
+            <td><code>training_master</code></td>
+            <td><strong>congestion_score</strong></td>
+            <td><code>float64</code></td>
+            <td>0</td>
+            <td>0.0%</td>
+            <td><span class="badge badge-success">CLEAN</span></td>
+        </tr>
+        
+        <tr>
+            <td><code>training_master</code></td>
+            <td><strong>draft_utilization</strong></td>
+            <td><code>float64</code></td>
+            <td>0</td>
+            <td>0.0%</td>
+            <td><span class="badge badge-success">CLEAN</span></td>
+        </tr>
+        
+        <tr>
+            <td><code>training_master</code></td>
+            <td><strong>loa_utilization</strong></td>
+            <td><code>float64</code></td>
+            <td>0</td>
+            <td>0.0%</td>
+            <td><span class="badge badge-success">CLEAN</span></td>
+        </tr>
+        
+        <tr>
+            <td><code>training_master</code></td>
+            <td><strong>year</strong></td>
+            <td><code>int32</code></td>
+            <td>0</td>
+            <td>0.0%</td>
+            <td><span class="badge badge-success">CLEAN</span></td>
+        </tr>
+        
+        <tr>
+            <td><code>training_master</code></td>
+            <td><strong>month</strong></td>
+            <td><code>int32</code></td>
+            <td>0</td>
+            <td>0.0%</td>
+            <td><span class="badge badge-success">CLEAN</span></td>
+        </tr>
+        
+        <tr>
+            <td><code>training_master</code></td>
+            <td><strong>quarter</strong></td>
+            <td><code>int32</code></td>
+            <td>0</td>
+            <td>0.0%</td>
+            <td><span class="badge badge-success">CLEAN</span></td>
+        </tr>
+        
+        <tr>
+            <td><code>training_master</code></td>
+            <td><strong>day_of_week</strong></td>
+            <td><code>int32</code></td>
+            <td>0</td>
+            <td>0.0%</td>
+            <td><span class="badge badge-success">CLEAN</span></td>
+        </tr>
+        
+        <tr>
+            <td><code>training_master</code></td>
+            <td><strong>day_of_year</strong></td>
+            <td><code>int32</code></td>
+            <td>0</td>
+            <td>0.0%</td>
+            <td><span class="badge badge-success">CLEAN</span></td>
+        </tr>
+        
+        <tr>
+            <td><code>training_master</code></td>
+            <td><strong>week_of_year</strong></td>
+            <td><code>int64</code></td>
+            <td>0</td>
+            <td>0.0%</td>
+            <td><span class="badge badge-success">CLEAN</span></td>
+        </tr>
+        
+        <tr>
+            <td><code>training_master</code></td>
+            <td><strong>month_sin</strong></td>
+            <td><code>float64</code></td>
+            <td>0</td>
+            <td>0.0%</td>
+            <td><span class="badge badge-success">CLEAN</span></td>
+        </tr>
+        
+        <tr>
+            <td><code>training_master</code></td>
+            <td><strong>month_cos</strong></td>
+            <td><code>float64</code></td>
+            <td>0</td>
+            <td>0.0%</td>
+            <td><span class="badge badge-success">CLEAN</span></td>
+        </tr>
+        
+        <tr>
+            <td><code>training_master</code></td>
+            <td><strong>day_of_week_sin</strong></td>
+            <td><code>float64</code></td>
+            <td>0</td>
+            <td>0.0%</td>
+            <td><span class="badge badge-success">CLEAN</span></td>
+        </tr>
+        
+        <tr>
+            <td><code>training_master</code></td>
+            <td><strong>day_of_week_cos</strong></td>
+            <td><code>float64</code></td>
+            <td>0</td>
+            <td>0.0%</td>
+            <td><span class="badge badge-success">CLEAN</span></td>
+        </tr>
+        
+        <tr>
+            <td><code>training_master</code></td>
+            <td><strong>is_monsoon</strong></td>
+            <td><code>int64</code></td>
+            <td>0</td>
+            <td>0.0%</td>
+            <td><span class="badge badge-success">CLEAN</span></td>
+        </tr>
+        
+        <tr>
+            <td><code>training_master</code></td>
+            <td><strong>is_peak_procurement</strong></td>
+            <td><code>int64</code></td>
+            <td>0</td>
+            <td>0.0%</td>
+            <td><span class="badge badge-success">CLEAN</span></td>
+        </tr>
+        
+        <tr>
+            <td><code>training_master</code></td>
+            <td><strong>season</strong></td>
+            <td><code>object</code></td>
+            <td>0</td>
+            <td>0.0%</td>
+            <td><span class="badge badge-success">CLEAN</span></td>
+        </tr>
+        
+        <tr>
+            <td><code>training_master</code></td>
+            <td><strong>cyclone_alert_season</strong></td>
+            <td><code>int64</code></td>
+            <td>0</td>
+            <td>0.0%</td>
+            <td><span class="badge badge-success">CLEAN</span></td>
+        </tr>
+        
+        <tr>
+            <td><code>training_master</code></td>
+            <td><strong>is_port_holiday</strong></td>
+            <td><code>int64</code></td>
+            <td>0</td>
+            <td>0.0%</td>
+            <td><span class="badge badge-success">CLEAN</span></td>
+        </tr>
+        
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

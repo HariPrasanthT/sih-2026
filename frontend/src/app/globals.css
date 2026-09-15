@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+@import 'tailwindcss';
+@import 'leaflet/dist/leaflet.css';
+
+@theme {
+  /* Light Theme Color Palette */
+  --color-sky-50: #f0f9ff;
+  --color-sky-100: #e0f2fe;
+  --color-sky-200: #bae6fd;
+  --color-sky-300: #7dd3fc;
+  --color-sky-400: #38bdf8;
+  --color-sky-500: #0ea5e9;
+  --color-sky-600: #0284c7;
+  --color-sky-700: #0369a1;
+
+  --color-azure-50: #f0f7ff;
+  --color-azure-100: #dbeafe;
+  --color-azure-200: #bfdbfe;
+  --color-azure-500: #3b82f6;
+  --color-azure-600: #2563eb;
+
+  --color-ocean-teal: #0891b2;
+  --color-ocean-accent: #06b6d4;
+  --color-ocean-light: #e0f2fe;
+
+  --color-gold-400: #fbbf24;
+  --color-gold-500: #f59e0b;
+  --color-gold-600: #d97706;
+
+  --color-positive: #059669;
+  --color-positive-light: #d1fae5;
+  --color-warning: #d97706;
+  --color-warning-light: #fef3c7;
+  --color-critical: #dc2626;
+  --color-critical-light: #fee2e2;
+
+  --color-glass-border: rgba(14, 165, 233, 0.15);
+  --color-glass-bg: rgba(255, 255, 255, 0.72);
+  --color-glass-bg-hover: rgba(255, 255, 255, 0.9);
+  --color-card-bg: #ffffff;
+  --color-surface: #f8faff;
+  --color-surface-2: #f0f7ff;
+}
+
+:root {
+  --background: #f0f7ff;
+  --foreground: #0f172a;
+  --card: #ffffff;
+  --border: rgba(14, 165, 233, 0.18);
+  --muted: #64748b;
+  --accent: #0ea5e9;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: 'Inter', 'Plus Jakarta Sans', var(--font-sans), sans-serif;
+  overflow-x: hidden;
+}
+
+/* Premium Light Glassmorphism */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(14, 165, 233, 0.18);
+  box-shadow: 0 4px 24px rgba(14, 165, 233, 0.08), 0 1px 4px rgba(0,0,0,0.04);
+}
+
+.glass-panel-hover:hover {
+  background: rgba(255, 255, 255, 0.92);
+  border-color: rgba(14, 165, 233, 0.35);
+  box-shadow: 0 8px 32px rgba(14, 165, 233, 0.14);
+}
+
+/* Custom scrollbar for webkit - light style */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f0f7ff;
+}
+::-webkit-scrollbar-thumb {
+  background: #bae6fd;
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #7dd3fc;
+}
+
+/* Maritime wave & vessel animations */
+@keyframes waveSlow {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(-25%); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes waveMedium {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(-30%); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes waveFast {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(-35%); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes waveSlowest {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(-15%); }
+  100% { transform: translateX(0); }
+}
+
+/* Sailing Panamax bulk carrier smooth traversal across panoramic sea */
+@keyframes sailingShip {
+  0% {
+    transform: translateX(-340px);
+  }
+  100% {
+    transform: translateX(calc(100vw + 340px));
+  }
+}
+
+/* Distant vessel sailing in opposite horizon lane */
+@keyframes distantShip {
+  0% {
+    transform: translateX(calc(100vw + 120px));
+  }
+  100% {
+    transform: translateX(-140px);
+  }
+}
+
+/* Realistic ocean heave & pitch motion for vessel on water */
+@keyframes shipHeave {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-3.5px) rotate(0.6deg);
+  }
+  50% {
+    transform: translateY(1.5px) rotate(-0.3deg);
+  }
+  75% {
+    transform: translateY(-2px) rotate(-0.7deg);
+  }
+}
+
+/* Floating card shimmer */
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+/* Soft pulse glow for light theme */
+@keyframes glowPulseLight {
+  0%, 100% { box-shadow: 0 0 12px rgba(14, 165, 233, 0.2); }
+  50% { box-shadow: 0 0 28px rgba(14, 165, 233, 0.45); }
+}
+
+/* Fade-up entrance */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-wave-slow {
+  animation: waveSlow 18s ease-in-out infinite;
+}
+
+.animate-wave-medium {
+  animation: waveMedium 12s ease-in-out infinite;
+}
+
+.animate-wave-fast {
+  animation: waveFast 7s ease-in-out infinite;
+}
+
+.animate-wave-slowest {
+  animation: waveSlowest 26s ease-in-out infinite;
+}
+
+.animate-sailing-ship {
+  animation: sailingShip 32s linear infinite;
+  will-change: transform;
+}
+
+.animate-distant-ship {
+  animation: distantShip 68s linear infinite;
+  will-change: transform;
+}
+
+.animate-ship-heave {
+  animation: shipHeave 4.5s ease-in-out infinite;
+  transform-origin: 50% 80%;
+  will-change: transform;
+}
+
+.animate-glow-pulse {
+  animation: glowPulseLight 3s ease-in-out infinite;
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.5s ease-out forwards;
+}
+
+/* Premium card styling */
+.lt-card {
+  background: #ffffff;
+  border: 1px solid rgba(14, 165, 233, 0.14);
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(14, 165, 233, 0.07), 0 1px 3px rgba(0,0,0,0.04);
+  transition: all 0.25s ease;
+}
+
+.lt-card:hover {
+  box-shadow: 0 8px 30px rgba(14, 165, 233, 0.16), 0 2px 8px rgba(0,0,0,0.06);
+  border-color: rgba(14, 165, 233, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Gradient text utility */
+.gradient-text-ocean {
+  background: linear-gradient(135deg, #0ea5e9, #3b82f6, #06b6d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Light shimmer badge */
+.shimmer-badge {
+  background: linear-gradient(90deg, #dbeafe, #bae6fd, #dbeafe);
+  background-size: 200% auto;
+  animation: shimmer 2.5s linear infinite;
+}

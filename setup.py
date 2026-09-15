@@ -1,0 +1,30 @@
+from setuptools import setup, find_packages
+
+setup(
+    name="freight_ml",
+    version="1.0.0",
+    packages=find_packages(),
+    install_requires=[
+        "numpy>=1.26.0",
+        "pandas>=2.0.0",
+        "scipy>=1.11.0",
+        "scikit-learn>=1.3.0",
+        "xgboost>=2.0.0",
+        "lightgbm>=4.0.0",
+        "torch>=2.0.0",
+        "hmmlearn>=0.3.0",
+        "fastapi>=0.100.0",
+        "uvicorn>=0.23.0",
+        "pydantic>=2.0.0",
+        "pyarrow>=14.0.0",
+        "openpyxl>=3.1.0",
+        "xlrd>=2.0.1",
+        "kagglehub>=0.2.0",
+        "pytest>=7.4.0",
+        "pyyaml>=6.0",
+        "joblib>=1.3.0",
+        "matplotlib>=3.7.0",
+        "seaborn>=0.12.0",
+        "requests>=2.31.0",
+    ],
+)

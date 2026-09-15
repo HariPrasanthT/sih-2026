@@ -1,0 +1,20 @@
+{
+  "lightgbm": {
+    "num_leaves": 39,
+    "max_depth": 3,
+    "feature_fraction": 0.877391852385598,
+    "learning_rate": 0.043046227083767666
+  },
+  "xgboost": {
+    "max_depth": 4,
+    "learning_rate": 0.14603696759977422,
+    "subsample": 0.9985349737489126,
+    "colsample_bytree": 0.7924521621662483,
+    "min_child_weight": 1
+  },
+  "catboost": {
+    "depth": 7,
+    "iterations": 207,
+    "learning_rate": 0.12295726589720167
+  }
+}

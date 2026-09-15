@@ -1,0 +1,20 @@
+port_code,port_name,canonical_name,country,coast,state,latitude,longitude,max_draft_m,max_loa_m,max_beam_m,max_dwt_tonnes,allowed_vessel_classes,avg_turnaround_days
+PARADIP,PARADIP,PARADIP,India,East Coast,Odisha,20.26,86.68,16.0,290.0,45.0,120000,"Handysize,Supramax,Panamax,Capesize",2.8
+VISAKHAPATNAM,VISAKHAPATNAM,VISAKHAPATNAM,India,East Coast,Andhra Pradesh,17.68,83.28,18.1,300.0,48.0,200000,"Handysize,Supramax,Panamax,Capesize",3.2
+DHAMRA,DHAMRA,DHAMRA,India,East Coast,Odisha,20.8,86.95,18.0,320.0,50.0,180000,"Handysize,Supramax,Panamax,Capesize",2.1
+GANGAVARAM,GANGAVARAM,GANGAVARAM,India,East Coast,Andhra Pradesh,17.61,83.23,19.5,320.0,50.0,200000,"Handysize,Supramax,Panamax,Capesize",2.4
+KAMARAJAR,KAMARAJAR,KAMARAJAR,India,East Coast,Tamil Nadu,13.25,80.33,15.5,275.0,45.0,90000,"Handysize,Supramax,Panamax",2.5
+CHENNAI,CHENNAI,CHENNAI,India,East Coast,Tamil Nadu,13.08,80.3,16.5,290.0,45.0,110000,"Handysize,Supramax,Panamax",2.9
+HALDIA,HALDIA,HALDIA,India,East Coast,West Bengal,22.02,88.06,8.5,230.0,32.2,45000,"Handysize,Supramax",3.8
+KOLKATA,KOLKATA,KOLKATA,India,East Coast,West Bengal,22.54,88.32,7.5,180.0,26.0,25000,Handysize,4.5
+GOPALPUR,GOPALPUR,GOPALPUR,India,East Coast,Odisha,19.3,84.97,14.5,250.0,38.0,75000,"Handysize,Supramax,Panamax",2.6
+HAY_POINT,HAY_POINT,HAY_POINT,Australia,International,,-21.28,149.3,19.0,350.0,55.0,220000,"Panamax,Capesize",3.0
+GLADSTONE,GLADSTONE,GLADSTONE,Australia,International,,-23.83,151.27,18.5,330.0,54.0,200000,"Panamax,Capesize",3.0
+NEWCASTLE,NEWCASTLE,NEWCASTLE,Australia,International,,-32.92,151.78,16.5,300.0,50.0,180000,"Panamax,Capesize",3.0
+TANJUNG_BARA,TANJUNG_BARA,TANJUNG_BARA,Indonesia,International,,0.53,117.65,17.5,310.0,50.0,180000,"Supramax,Panamax,Capesize",3.0
+BALIKPAPAN,BALIKPAPAN,BALIKPAPAN,Indonesia,International,,-1.27,116.83,14.5,250.0,40.0,80000,"Handysize,Supramax,Panamax",3.0
+TABONEO,TABONEO,TABONEO,Indonesia,International,,-3.73,114.48,15.0,260.0,43.0,90000,"Handysize,Supramax,Panamax",3.0
+MAPUTO,MAPUTO,MAPUTO,Mozambique,International,,-25.97,32.58,14.2,250.0,38.0,80000,"Handysize,Supramax,Panamax",3.0
+RICHARDS_BAY,RICHARDS_BAY,RICHARDS_BAY,South Africa,International,,-28.8,32.05,19.0,350.0,55.0,220000,"Panamax,Capesize",3.0
+UST_LUGA,UST_LUGA,UST_LUGA,Russia,International,,59.68,28.32,17.5,300.0,48.0,160000,"Supramax,Panamax,Capesize",3.0
+NORFOLK,NORFOLK,NORFOLK,United States,International,,36.85,-76.3,15.2,300.0,48.0,150000,"Panamax,Capesize",3.0

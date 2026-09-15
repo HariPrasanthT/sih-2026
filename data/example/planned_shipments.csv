@@ -1,0 +1,6 @@
+shipment_id,origin_port,destination_port,cargo_type,cargo_size_tons,ship_date,weight_cost,weight_speed,weight_reliability,top_n
+SHP_001,HAY_POINT,DHAMRA,Coking Coal,70000,2026-09-15,0.50,0.30,0.20,5
+SHP_002,GLADSTONE,PARADIP,Coking Coal,75000,2026-09-20,0.60,0.20,0.20,5
+SHP_003,TANJUNG_BARA,VISAKHAPATNAM,Thermal Coal,55000,2026-09-25,0.40,0.40,0.20,3
+SHP_004,BALIKPAPAN,KAMARAJAR,Thermal Coal,50000,2026-10-01,0.50,0.30,0.20,5
+SHP_005,MAPUTO,PARADIP,Coking Coal,65000,2026-10-10,0.50,0.30,0.20,4

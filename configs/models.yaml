@@ -1,0 +1,63 @@
+# Model Training and Evaluation Configuration
+models:
+  freight:
+    quantiles: [0.10, 0.50, 0.90]
+    min_tft_rows: 50000
+    xgboost:
+      n_estimators: 300
+      max_depth: 6
+      learning_rate: 0.05
+      subsample: 0.8
+      colsample_bytree: 0.8
+      random_state: 42
+    lightgbm:
+      n_estimators: 300
+      num_leaves: 31
+      learning_rate: 0.05
+      subsample: 0.8
+      colsample_bytree: 0.8
+      random_state: 42
+    tft:
+      max_epochs: 30
+      learning_rate: 0.001
+      hidden_size: 64
+      attention_head_size: 4
+      dropout: 0.1
+
+  transit:
+    model_type: "lightgbm"
+    n_estimators: 200
+    max_depth: 5
+    learning_rate: 0.05
+    random_state: 42
+
+  ontime:
+    model_type: "lightgbm"
+    n_estimators: 200
+    max_depth: 5
+    learning_rate: 0.05
+    scale_pos_weight: 1.0
+    random_state: 42
+
+  regime:
+    n_states: 3 # LOW_VOLATILITY, NORMAL, HIGH_VOLATILITY
+    covariance_type: "full"
+    n_iter: 100
+    random_state: 42
+
+  conformal:
+    alpha: 0.10 # 90% prediction interval
+    target_coverage: 0.90
+    coverage_tolerance: 0.05 # Acceptable PICP: 85% to 95%
+
+evaluation:
+  target_picp: 0.90
+  picp_lower: 0.85
+  picp_upper: 0.95
+  preferred_mape: 0.20
+  strong_mape: 0.15
+  acceptable_r2: 0.60
+  strong_r2: 0.75
+  preferred_transit_mae_days: 2.0
+  preferred_ontime_auc: 0.75
+  preferred_ontime_brier: 0.20

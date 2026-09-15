@@ -1,0 +1,26 @@
+{
+  "origin_port": {
+    "BALIKPAPAN": 0,
+    "GLADSTONE": 1,
+    "HAY_POINT": 2,
+    "MAPUTO": 3,
+    "NEWCASTLE": 4,
+    "RICHARDS_BAY": 5,
+    "TANJUNG_BARA": 6
+  },
+  "destination_port": {
+    "DHAMRA": 0,
+    "KAMARAJAR": 1,
+    "PARADIP": 2,
+    "VISAKHAPATNAM": 3
+  },
+  "cargo_type": {
+    "Coking Coal": 0,
+    "Thermal Coal": 1
+  },
+  "vessel_class": {
+    "Capesize": 0,
+    "Panamax": 1,
+    "Supramax": 2
+  }
+}

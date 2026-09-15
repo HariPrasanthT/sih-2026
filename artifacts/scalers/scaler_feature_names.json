@@ -1,0 +1,51 @@
+{
+  "numeric_features": [
+    "bdi_index",
+    "bunker_vlsfo_usd_ton",
+    "usd_inr_rate",
+    "freight_lag_1d",
+    "freight_lag_7d",
+    "freight_lag_30d",
+    "freight_rolling_mean_7d",
+    "freight_rolling_mean_30d",
+    "freight_rolling_mean_90d",
+    "freight_rolling_std_7d",
+    "freight_rolling_std_30d",
+    "freight_momentum_7d",
+    "freight_volatility_30d",
+    "derived_congestion_index"
+  ],
+  "n_samples": 18270,
+  "feature_means": {
+    "bdi_index": 1913.5982,
+    "bunker_vlsfo_usd_ton": 680.3492,
+    "usd_inr_rate": 78.1913,
+    "freight_lag_1d": 19.3942,
+    "freight_lag_7d": 19.3696,
+    "freight_lag_30d": 19.4595,
+    "freight_rolling_mean_7d": 19.3927,
+    "freight_rolling_mean_30d": 19.3858,
+    "freight_rolling_mean_90d": 19.3617,
+    "freight_rolling_std_7d": 0.1197,
+    "freight_rolling_std_30d": 0.2623,
+    "freight_momentum_7d": 0.0022,
+    "freight_volatility_30d": 0.0139,
+    "derived_congestion_index": 0.5415
+  },
+  "feature_scales": {
+    "bdi_index": 354.5426,
+    "bunker_vlsfo_usd_ton": 85.5552,
+    "usd_inr_rate": 2.8994,
+    "freight_lag_1d": 5.1235,
+    "freight_lag_7d": 5.1435,
+    "freight_lag_30d": 5.0953,
+    "freight_rolling_mean_7d": 5.1223,
+    "freight_rolling_mean_30d": 5.1171,
+    "freight_rolling_mean_90d": 5.1023,
+    "freight_rolling_std_7d": 0.0706,
+    "freight_rolling_std_30d": 0.1694,
+    "freight_momentum_7d": 0.3107,
+    "freight_volatility_30d": 0.0081,
+    "derived_congestion_index": 0.1172
+  }
+}

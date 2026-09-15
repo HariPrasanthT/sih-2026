@@ -1,0 +1,66 @@
+# Large raw data archives and dataset directories
+FREIGHTIQ.zip
+*.zip
+*.tar.gz
+*.csv.gz
+
+# Raw source dataset directories
+AIS ship tracking dynamic and port conjection/
+CMO-April-2026-Data-Supplement/
+Commodity Coal Prices/
+FREIGHT FORECAST DATA/
+Global Daily Port Activity and Trade Estimates/
+Global Supply Chain Disruption & Resilience/
+Maritime Port Performance Dataset/
+WORLD BANK COMMODITY DATA/
+ais_syros_final/
+carago traffic data/
+cargo traffic data/
+lme aluminum forecasting dataset - explainability/
+data/raw/
+data/raw/**
+data/synthetic/
+
+# Scratch & temporary development files
+scratch/
+catboost_info/
+*.egg-info/
+.dist/
+.pytest_cache/
+htmlcov/
+.coverage
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+
+# Virtual environments
+venv/
+.venv/
+ENV/
+env/
+
+# Environment Variables & Local Secrets
+.env
+.env.local
+.env.*.local
+
+# Frontend dependencies and builds
+node_modules/
+frontend/node_modules/
+.next/
+frontend/.next/
+frontend/out/
+.vercel
+frontend/.vercel
+
+# IDE & OS
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

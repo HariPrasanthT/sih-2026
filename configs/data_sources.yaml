@@ -1,0 +1,109 @@
+# Data Sources Configuration
+kaggle_datasets:
+  - owner: "gaborvisky"
+    dataset: "ais-dataset"
+    purpose: "ais_supporting_data"
+    category: "ais"
+    scope: "GLOBAL_SUPPORTING"
+    description: "AIS trajectory & vessel behavior dataset for supporting feature algorithms"
+
+local_datasets:
+  - path: "cargo traffic data"
+    category: "government/traffic"
+    scope: "INDIA_REAL"
+    description: "IPA and Indian Major Port traffic reports (Paradip, Visakhapatnam, Haldia, Chennai, etc.)"
+  - path: "WORLD BANK COMMODITY DATA"
+    category: "market"
+    scope: "GLOBAL_SUPPORTING"
+    description: "World Bank Commodity Price Data (Pink Sheet) for coal, crude, and metals"
+  - path: "Commodity Coal Prices"
+    category: "market"
+    scope: "GLOBAL_SUPPORTING"
+    description: "Historical benchmark coal price time series"
+  - path: "Global Daily Port Activity and Trade Estimates"
+    category: "ports"
+    scope: "GLOBAL_SUPPORTING"
+    description: "UN / IMF global port daily activity and call estimates"
+
+port_constraints:
+  PARADIP:
+    max_draft_m: 16.0
+    max_loa_m: 290.0
+    max_beam_m: 45.0
+    max_dwt_tonnes: 120000
+    allowed_vessel_classes: ["Handysize", "Supramax", "Panamax", "Capesize"]
+    avg_turnaround_days: 2.8
+    anchorage_lat: 20.26
+    anchorage_lon: 86.68
+  VISAKHAPATNAM:
+    max_draft_m: 18.1
+    max_loa_m: 300.0
+    max_beam_m: 48.0
+    max_dwt_tonnes: 200000
+    allowed_vessel_classes: ["Handysize", "Supramax", "Panamax", "Capesize"]
+    avg_turnaround_days: 3.2
+    anchorage_lat: 17.68
+    anchorage_lon: 83.28
+  DHAMRA:
+    max_draft_m: 18.0
+    max_loa_m: 320.0
+    max_beam_m: 50.0
+    max_dwt_tonnes: 180000
+    allowed_vessel_classes: ["Handysize", "Supramax", "Panamax", "Capesize"]
+    avg_turnaround_days: 2.1
+    anchorage_lat: 20.80
+    anchorage_lon: 86.95
+  GANGAVARAM:
+    max_draft_m: 19.5
+    max_loa_m: 320.0
+    max_beam_m: 50.0
+    max_dwt_tonnes: 200000
+    allowed_vessel_classes: ["Handysize", "Supramax", "Panamax", "Capesize"]
+    avg_turnaround_days: 2.4
+    anchorage_lat: 17.61
+    anchorage_lon: 83.23
+  KAMARAJAR:
+    max_draft_m: 15.5
+    max_loa_m: 275.0
+    max_beam_m: 45.0
+    max_dwt_tonnes: 90000
+    allowed_vessel_classes: ["Handysize", "Supramax", "Panamax"]
+    avg_turnaround_days: 2.5
+    anchorage_lat: 13.25
+    anchorage_lon: 80.33
+  CHENNAI:
+    max_draft_m: 16.5
+    max_loa_m: 290.0
+    max_beam_m: 45.0
+    max_dwt_tonnes: 110000
+    allowed_vessel_classes: ["Handysize", "Supramax", "Panamax"]
+    avg_turnaround_days: 2.9
+    anchorage_lat: 13.08
+    anchorage_lon: 80.30
+  HALDIA:
+    max_draft_m: 8.5
+    max_loa_m: 230.0
+    max_beam_m: 32.2
+    max_dwt_tonnes: 45000
+    allowed_vessel_classes: ["Handysize", "Supramax"]
+    avg_turnaround_days: 3.8
+    anchorage_lat: 22.02
+    anchorage_lon: 88.06
+  KOLKATA:
+    max_draft_m: 7.5
+    max_loa_m: 180.0
+    max_beam_m: 26.0
+    max_dwt_tonnes: 25000
+    allowed_vessel_classes: ["Handysize"]
+    avg_turnaround_days: 4.5
+    anchorage_lat: 22.54
+    anchorage_lon: 88.32
+  GOPALPUR:
+    max_draft_m: 14.5
+    max_loa_m: 250.0
+    max_beam_m: 38.0
+    max_dwt_tonnes: 75000
+    allowed_vessel_classes: ["Handysize", "Supramax", "Panamax"]
+    avg_turnaround_days: 2.6
+    anchorage_lat: 19.30
+    anchorage_lon: 84.97

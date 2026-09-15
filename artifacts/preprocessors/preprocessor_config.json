@@ -1,0 +1,32 @@
+{
+  "pipeline_name": "MaritimeFreightFeaturePreprocessor",
+  "numeric_transformers": [
+    "StandardScaler"
+  ],
+  "numeric_columns": [
+    "bdi_index",
+    "bunker_vlsfo_usd_ton",
+    "usd_inr_rate",
+    "freight_lag_1d",
+    "freight_lag_7d",
+    "freight_lag_30d",
+    "freight_rolling_mean_7d",
+    "freight_rolling_mean_30d",
+    "freight_rolling_mean_90d",
+    "freight_rolling_std_7d",
+    "freight_rolling_std_30d",
+    "freight_momentum_7d",
+    "freight_volatility_30d",
+    "derived_congestion_index"
+  ],
+  "categorical_transformers": [
+    "OneHotEncoder"
+  ],
+  "categorical_columns": [
+    "origin_port",
+    "destination_port",
+    "cargo_type",
+    "vessel_class"
+  ],
+  "total_transformed_features": 30
+}

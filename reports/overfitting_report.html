@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Overfitting Detection Report - SAIL SIH 26006</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #0f172a; color: #f8fafc; margin: 0; padding: 30px; }
+        .container { max-width: 1200px; margin: 0 auto; background: #1e293b; border-radius: 12px; padding: 30px; box-shadow: 0 10px 25px rgba(0,0,0,0.5); }
+        h1 { color: #f59e0b; margin-top: 0; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 13px; }
+        th, td { padding: 10px 14px; text-align: center; border-bottom: 1px solid #334155; }
+        th { background: #0f172a; color: #94a3b8; font-size: 11px; text-transform: uppercase; }
+        tr:hover { background: #24344d; }
+        .badge { padding: 4px 10px; border-radius: 6px; font-size: 11px; font-weight: bold; }
+        .badge-success { background: #059669; color: #ecfdf5; }
+        .badge-danger { background: #dc2626; color: #fef2f2; }
+        .criteria-box { background: #0f172a; border-left: 4px solid #f59e0b; padding: 15px 20px; border-radius: 0 8px 8px 0; margin-bottom: 25px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔍 Overfitting Detection & Generalization Audit</h1>
+        <div class="criteria-box">
+            <strong>Overfitting Guard Rule:</strong> If Train R² > 0.99 and Validation R² drops by > 5%, the model is flagged as <code>⚠ OVERFITTING</code>.
+            Production models must demonstrate tight generalization between Train (2020–2024), Validation (2025), and Out-of-Time Held-Out Test (2026).
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Model Name</th>
+                    <th>Train MAE</th>
+                    <th>Val MAE</th>
+                    <th>Test MAE</th>
+                    <th>Train R²</th>
+                    <th>Val R²</th>
+                    <th>Test R²</th>
+                    <th>Train MAPE</th>
+                    <th>Val MAPE</th>
+                    <th>Test MAPE</th>
+                    <th>R² Drop</th>
+                    <th>Audit Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+        <tr>
+            <td><strong>XGBoost Quantile</strong></td>
+            <td>$0.08</td>
+            <td>$0.15</td>
+            <td><strong>$0.12</strong></td>
+            <td>0.9994</td>
+            <td>0.9973</td>
+            <td><strong>0.9983</strong></td>
+            <td>0.5%</td>
+            <td>1.0%</td>
+            <td><strong>0.8%</strong></td>
+            <td>0.21%</td>
+            <td><span class="badge badge-success">✅ GENERALIZED</span></td>
+        </tr>
+        
+        <tr>
+            <td><strong>LightGBM Quantile</strong></td>
+            <td>$0.09</td>
+            <td>$0.09</td>
+            <td><strong>$0.09</strong></td>
+            <td>0.9991</td>
+            <td>0.9992</td>
+            <td><strong>0.9992</strong></td>
+            <td>0.5%</td>
+            <td>0.6%</td>
+            <td><strong>0.6%</strong></td>
+            <td>-0.01%</td>
+            <td><span class="badge badge-success">✅ GENERALIZED</span></td>
+        </tr>
+        
+        <tr>
+            <td><strong>CatBoost Quantile</strong></td>
+            <td>$0.09</td>
+            <td>$0.13</td>
+            <td><strong>$0.11</strong></td>
+            <td>0.9992</td>
+            <td>0.9983</td>
+            <td><strong>0.9988</strong></td>
+            <td>0.5%</td>
+            <td>0.8%</td>
+            <td><strong>0.7%</strong></td>
+            <td>0.09%</td>
+            <td><span class="badge badge-success">✅ GENERALIZED</span></td>
+        </tr>
+        
+        <tr>
+            <td><strong>Random Forest</strong></td>
+            <td>$0.05</td>
+            <td>$0.09</td>
+            <td><strong>$0.09</strong></td>
+            <td>0.9998</td>
+            <td>0.9992</td>
+            <td><strong>0.9993</strong></td>
+            <td>0.3%</td>
+            <td>0.6%</td>
+            <td><strong>0.6%</strong></td>
+            <td>0.06%</td>
+            <td><span class="badge badge-success">✅ GENERALIZED</span></td>
+        </tr>
+        
+        <tr>
+            <td><strong>Stacking Ensemble</strong></td>
+            <td>$0.06</td>
+            <td>$0.09</td>
+            <td><strong>$0.09</strong></td>
+            <td>0.9996</td>
+            <td>0.9993</td>
+            <td><strong>0.9993</strong></td>
+            <td>0.4%</td>
+            <td>0.5%</td>
+            <td><strong>0.5%</strong></td>
+            <td>0.03%</td>
+            <td><span class="badge badge-success">✅ GENERALIZED</span></td>
+        </tr>
+        
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

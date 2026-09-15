@@ -1,0 +1,259 @@
+{
+  "freight_champion": "xgboost_quantile_v1",
+  "metrics": {
+    "mae_usd_ton": 0.123,
+    "rmse_usd_ton": 0.173,
+    "mape_pct": 0.75,
+    "smape_pct": 0.75,
+    "r2_score": 0.9983,
+    "pinball_loss_p50": 0.0613,
+    "pinball_loss_p10": 0.0282,
+    "pinball_loss_p90": 0.022,
+    "picp_90": 0.7085,
+    "mean_interval_width": 0.295,
+    "median_interval_width": 0.276,
+    "model": "XGBoost Quantile"
+  },
+  "all_models": {
+    "Naive (Last-Value)": {
+      "mae_usd_ton": 0.087,
+      "rmse_usd_ton": 0.11,
+      "mape_pct": 0.54,
+      "smape_pct": 0.54,
+      "r2_score": 0.9993,
+      "pinball_loss_p50": 0.0436,
+      "model": "Naive (Last-Value)"
+    },
+    "Moving Average (7-Day)": {
+      "mae_usd_ton": 0.148,
+      "rmse_usd_ton": 0.199,
+      "mape_pct": 0.9,
+      "smape_pct": 0.9,
+      "r2_score": 0.9977,
+      "pinball_loss_p50": 0.074,
+      "model": "Moving Average (7-Day)"
+    },
+    "Seasonal Naive (30-Day)": {
+      "mae_usd_ton": 0.552,
+      "rmse_usd_ton": 0.714,
+      "mape_pct": 3.24,
+      "smape_pct": 3.24,
+      "r2_score": 0.9707,
+      "pinball_loss_p50": 0.276,
+      "model": "Seasonal Naive (30-Day)"
+    },
+    "XGBoost Quantile": {
+      "mae_usd_ton": 0.123,
+      "rmse_usd_ton": 0.173,
+      "mape_pct": 0.75,
+      "smape_pct": 0.75,
+      "r2_score": 0.9983,
+      "pinball_loss_p50": 0.0613,
+      "pinball_loss_p10": 0.0282,
+      "pinball_loss_p90": 0.022,
+      "picp_90": 0.7085,
+      "mean_interval_width": 0.295,
+      "median_interval_width": 0.276,
+      "model": "XGBoost Quantile"
+    },
+    "LightGBM Quantile": {
+      "mae_usd_ton": 0.093,
+      "rmse_usd_ton": 0.118,
+      "mape_pct": 0.58,
+      "smape_pct": 0.58,
+      "r2_score": 0.9992,
+      "pinball_loss_p50": 0.0467,
+      "pinball_loss_p10": 0.0241,
+      "pinball_loss_p90": 0.0463,
+      "picp_90": 0.7784,
+      "mean_interval_width": 0.564,
+      "median_interval_width": 0.34,
+      "model": "LightGBM Quantile"
+    },
+    "CatBoost Quantile": {
+      "mae_usd_ton": 0.114,
+      "rmse_usd_ton": 0.144,
+      "mape_pct": 0.7,
+      "smape_pct": 0.7,
+      "r2_score": 0.9988,
+      "pinball_loss_p50": 0.057,
+      "pinball_loss_p10": 0.0337,
+      "pinball_loss_p90": 0.0312,
+      "picp_90": 0.6992,
+      "mean_interval_width": 0.415,
+      "median_interval_width": 0.384,
+      "model": "CatBoost Quantile"
+    },
+    "Random Forest Quantile": {
+      "mae_usd_ton": 0.088,
+      "rmse_usd_ton": 0.111,
+      "mape_pct": 0.55,
+      "smape_pct": 0.55,
+      "r2_score": 0.9993,
+      "pinball_loss_p50": 0.0442,
+      "pinball_loss_p10": 0.0206,
+      "pinball_loss_p90": 0.0204,
+      "picp_90": 0.7441,
+      "mean_interval_width": 0.26,
+      "median_interval_width": 0.251,
+      "model": "Random Forest Quantile"
+    },
+    "Quantile Ensemble": {
+      "mae_usd_ton": 0.093,
+      "rmse_usd_ton": 0.117,
+      "mape_pct": 0.57,
+      "smape_pct": 0.57,
+      "r2_score": 0.9992,
+      "pinball_loss_p50": 0.0464,
+      "pinball_loss_p10": 0.0232,
+      "pinball_loss_p90": 0.0218,
+      "picp_90": 0.7507,
+      "mean_interval_width": 0.3,
+      "median_interval_width": 0.264,
+      "model": "Quantile Ensemble"
+    },
+    "Stacking Ensemble (Meta-Learner)": {
+      "mae_usd_ton": 0.086,
+      "rmse_usd_ton": 0.109,
+      "mape_pct": 0.54,
+      "smape_pct": 0.54,
+      "r2_score": 0.9993,
+      "pinball_loss_p50": 0.0432,
+      "pinball_loss_p10": 0.0319,
+      "pinball_loss_p90": 0.0353,
+      "picp_90": 0.2244,
+      "mean_interval_width": 0.063,
+      "median_interval_width": 0.056,
+      "model": "Stacking Ensemble (Meta-Learner)"
+    }
+  },
+  "transit_metrics": {
+    "transit_mae_days": 0.407,
+    "transit_rmse_days": 0.508,
+    "transit_r2": 0.977,
+    "transit_mape_pct": 3.49
+  },
+  "ontime_metrics": {
+    "roc_auc": 0.5988,
+    "pr_auc": 0.9987,
+    "brier_score": 0.0045,
+    "accuracy": 0.9953,
+    "balanced_accuracy": 0.4992,
+    "f1_score": 0.9977
+  },
+  "conformal_coverage": {
+    "target_confidence": 0.9,
+    "empirical_picp": 0.9537,
+    "target_picp": 0.9,
+    "acceptable_band": [
+      0.85,
+      0.95
+    ],
+    "mean_interval_width": 0.694,
+    "median_interval_width": 0.694,
+    "calibration_status": "FAILED",
+    "q_hat_margin": 0.347
+  },
+  "route_metrics": [
+    {
+      "route": "BALIKPAPAN -> KAMARAJAR",
+      "cargo": "Thermal Coal",
+      "vclass": "Supramax",
+      "mae": 0.11,
+      "mape": 1.0,
+      "samples": 365
+    },
+    {
+      "route": "GLADSTONE -> PARADIP",
+      "cargo": "Coking Coal",
+      "vclass": "Panamax",
+      "mae": 0.13,
+      "mape": 0.6,
+      "samples": 365
+    },
+    {
+      "route": "HAY_POINT -> DHAMRA",
+      "cargo": "Coking Coal",
+      "vclass": "Capesize",
+      "mae": 0.11,
+      "mape": 0.6,
+      "samples": 365
+    },
+    {
+      "route": "HAY_POINT -> PARADIP",
+      "cargo": "Coking Coal",
+      "vclass": "Capesize",
+      "mae": 0.1,
+      "mape": 0.5,
+      "samples": 365
+    },
+    {
+      "route": "HAY_POINT -> VISAKHAPATNAM",
+      "cargo": "Coking Coal",
+      "vclass": "Capesize",
+      "mae": 0.11,
+      "mape": 0.6,
+      "samples": 365
+    },
+    {
+      "route": "MAPUTO -> VISAKHAPATNAM",
+      "cargo": "Coking Coal",
+      "vclass": "Panamax",
+      "mae": 0.1,
+      "mape": 0.5,
+      "samples": 365
+    },
+    {
+      "route": "NEWCASTLE -> DHAMRA",
+      "cargo": "Thermal Coal",
+      "vclass": "Panamax",
+      "mae": 0.16,
+      "mape": 0.7,
+      "samples": 365
+    },
+    {
+      "route": "RICHARDS_BAY -> PARADIP",
+      "cargo": "Thermal Coal",
+      "vclass": "Capesize",
+      "mae": 0.21,
+      "mape": 1.2,
+      "samples": 365
+    },
+    {
+      "route": "TANJUNG_BARA -> DHAMRA",
+      "cargo": "Thermal Coal",
+      "vclass": "Supramax",
+      "mae": 0.1,
+      "mape": 0.9,
+      "samples": 365
+    },
+    {
+      "route": "TANJUNG_BARA -> PARADIP",
+      "cargo": "Thermal Coal",
+      "vclass": "Supramax",
+      "mae": 0.1,
+      "mape": 0.8,
+      "samples": 365
+    }
+  ],
+  "vessel_class_metrics": [
+    {
+      "class": "Capesize",
+      "dwt_range": "100k - 350k DWT",
+      "mae": 0.13,
+      "mape": 0.7
+    },
+    {
+      "class": "Panamax",
+      "dwt_range": "65k - 99k DWT",
+      "mae": 0.13,
+      "mape": 0.6
+    },
+    {
+      "class": "Supramax",
+      "dwt_range": "40k - 64k DWT",
+      "mae": 0.1,
+      "mape": 0.9
+    }
+  ]
+}
