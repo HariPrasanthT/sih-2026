@@ -2,7 +2,11 @@
  * FreightIQ API Client for FastAPI Backend (http://localhost:8000)
  */
 
-export const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+export const API_BASE_URL =
+  process.env.NEXT_PUBLIC_API_URL ||
+  (typeof window !== "undefined" && window.location.hostname.includes("vercel.app")
+    ? "https://freightiq-api.onrender.com"
+    : "http://localhost:8000");
 
 export interface ForecastPoint {
   date: string;
@@ -174,22 +178,40 @@ export interface ModelMetricsResponse {
 // ── Generic Fetch Helper ────────────────────────────────────────────────────────
 async function fetchFromApi<T>(endpoint: string, options?: RequestInit): Promise<T> {
   const cleanEndpoint = endpoint.startsWith("/") ? endpoint : `/${endpoint}`;
-  
-  const isBrowser = typeof window !== "undefined";
-  const urlsToTry = [
-    `${API_BASE_URL}${cleanEndpoint}`,
-    `http://127.0.0.1:8000${cleanEndpoint}`,
-    `http://localhost:8000${cleanEndpoint}`,
-    `/api/proxy${cleanEndpoint}`,
-  ];
 
-  const uniqueUrls = Array.from(new Set(urlsToTry));
-  let lastError: any = null;
+  const isBrowser = typeof window !== "undefined";
+  const isHttps = isBrowser && window.location.protocol === "https:";
+
+  const candidateUrls: string[] = [];
+
+  // 1. Configured or detected Base URL
+  if (API_BASE_URL) {
+    candidateUrls.push(`${API_BASE_URL}${cleanEndpoint}`);
+  }
+
+  // 2. Next.js server-side reverse proxy (avoids browser CORS and mixed content)
+  if (isBrowser) {
+    candidateUrls.push(`/api/proxy${cleanEndpoint}`);
+  }
+
+  // 3. Render cloud backend candidate
+  candidateUrls.push(`https://freightiq-api.onrender.com${cleanEndpoint}`);
+
+  // 4. Local endpoints (only when on insecure HTTP to avoid browser mixed-content security blocks)
+  if (!isHttps) {
+    candidateUrls.push(`http://127.0.0.1:8000${cleanEndpoint}`);
+    candidateUrls.push(`http://localhost:8000${cleanEndpoint}`);
+  }
+
+  const uniqueUrls = Array.from(new Set(candidateUrls));
+  let lastError: unknown = null;
 
   for (const url of uniqueUrls) {
     try {
+      const isCloud = url.includes("onrender.com");
       const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 4500);
+      // Render free-tier can take up to 25s on cold starts
+      const timeoutId = setTimeout(() => controller.abort(), isCloud ? 25000 : 5000);
 
       const res = await fetch(url, {
         headers: {
@@ -205,12 +227,12 @@ async function fetchFromApi<T>(endpoint: string, options?: RequestInit): Promise
       if (res.ok) {
         return (await res.json()) as T;
       }
-    } catch (err: any) {
+    } catch (err: unknown) {
       lastError = err;
     }
   }
 
-  console.warn(`Fetch to all URLs failed for ${endpoint}:`, lastError?.message || lastError);
+  console.warn(`Fetch to all URLs failed for ${endpoint}:`, lastError instanceof Error ? lastError.message : lastError);
   throw lastError || new Error(`Failed to fetch from all endpoints for ${endpoint}`);
 }
 

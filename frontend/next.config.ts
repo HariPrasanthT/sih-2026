@@ -1,15 +1,16 @@
 import type { NextConfig } from "next";
 
+const backendUrl = process.env.NEXT_PUBLIC_API_URL || "https://freightiq-api.onrender.com";
+
 const nextConfig: NextConfig = {
   async rewrites() {
     return [
       {
         source: "/api/proxy/:path*",
-        destination: "http://127.0.0.1:8000/:path*",
+        destination: `${backendUrl}/:path*`,
       },
     ];
   },
 };
 
 export default nextConfig;
-

@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: sih-2026-backend
+    name: freightiq-api
     runtime: python
     plan: free
     buildCommand: pip install -r requirements.txt
