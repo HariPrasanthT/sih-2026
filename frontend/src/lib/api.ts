@@ -123,9 +123,48 @@ export interface RecommendationFinancials {
   estimated_savings_usd: number;
 }
 
+export interface LiveMarketResponse {
+  status: string;
+  usd_inr_rate?: number;
+  brent_crude_usd_bbl?: number;
+  wti_crude_usd_bbl?: number;
+  panamax_rate?: number;
+  trend?: string;
+  bdi_index?: number;
+  source?: string;
+  [key: string]: unknown;
+}
+
+export interface LiveFleetVessel {
+  vessel_name: string;
+  vessel_class: string;
+  dwt: number;
+  lat: number;
+  lng: number;
+  sog: number;
+  cog: number;
+  heading: number;
+  nav_status: string;
+  destination: string;
+  cargo: string;
+  eta: string;
+  imo: number;
+  mmsi: number;
+  draft_m: number;
+  charter_status: string;
+  [key: string]: unknown;
+}
+
+export interface LiveFleetResponse {
+  source: string;
+  vessel_count: number;
+  vessels: LiveFleetVessel[];
+  [key: string]: unknown;
+}
+
 export interface RecommendationItem {
   rank: number;
-  vessel: Record<string, any>;
+  vessel: VesselData;
   scores: RecommendationScore;
   financials: RecommendationFinancials;
   timeline: {
@@ -145,9 +184,9 @@ export interface RecommendationResponse {
   status: string;
   recommendation_id: string;
   timestamp: string;
-  request_summary: Record<string, any>;
+  request_summary: Record<string, unknown>;
   recommendations: RecommendationItem[];
-  market_context: Record<string, any>;
+  market_context: Record<string, unknown>;
   executive_summary: string;
 }
 
@@ -291,15 +330,15 @@ export async function fetchRecommendations(
 /**
  * Get live market indices and bunker prices
  */
-export async function fetchLiveMarket(): Promise<Record<string, any>> {
-  return fetchFromApi<Record<string, any>>("/live/market");
+export async function fetchLiveMarket(): Promise<LiveMarketResponse> {
+  return fetchFromApi<LiveMarketResponse>("/live/market");
 }
 
 /**
  * Get live fleet telemetry and AIS coordinates
  */
-export async function fetchLiveFleet(): Promise<Record<string, any>> {
-  return fetchFromApi<Record<string, any>>("/live/fleet");
+export async function fetchLiveFleet(): Promise<LiveFleetResponse> {
+  return fetchFromApi<LiveFleetResponse>("/live/fleet");
 }
 
 /**
